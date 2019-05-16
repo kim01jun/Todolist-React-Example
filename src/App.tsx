@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
+import Main from './pages/Main';
 
-class App extends Component {
+interface AppProps { }
+
+interface AppState { }
+
+export default class App extends Component<AppProps, AppState> {
   render() {
-    return (
-      <h1>Hello</h1>
-    );
+    return <Main />;
   }
 }
-
-export default App;
