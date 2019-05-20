@@ -37,7 +37,7 @@ export default class Main extends Component<MainProps, MainState> {
     return (
       <div>
         <Header />
-        <Todos />
+        <Todos token={this.state.token as string} userid={this.state.userid as string}/>
         {this.state.isLogin ? <Start name={this.state.name as string}/> : <Login />}
       </div>
     );
