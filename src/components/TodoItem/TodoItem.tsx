@@ -9,7 +9,7 @@ interface TodoItemProps {
   title: string;
   content: string;
   priority: number;
-  dueDate: Date;
+  dueDate?: Date;
   done: boolean;
 
   complete: (todoId: string, before: boolean) => void;
@@ -30,7 +30,7 @@ export default class TodoItem extends Component<TodoItemProps, TodoItemState> {
         </TitleContent>
       </Left>
       <Right>
-        <DueDate>{new Date(this.props.dueDate).toLocaleString()}</DueDate>
+        {this.props.dueDate && <DueDate>{new Date(this.props.dueDate).toLocaleString()}</DueDate>}
         <DeleteBtn onClick={e => this.props.delete(this.props.id)}>×</DeleteBtn>
       </Right>
     </Todo>);
