@@ -96,6 +96,6 @@ export const DeleteBtn = styled.button`
   height: 20px;
 
   &:hover {
-    background-color: rgb(0, 0, 0, 0.4)
+    background-color: rgba(0, 0, 0, 0.4)
   }
 `;
