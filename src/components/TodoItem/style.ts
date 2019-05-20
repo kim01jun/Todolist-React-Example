@@ -69,6 +69,7 @@ export const Title = styled.p`
 
 export const Content = styled.span`
   font-weight: 300;
+  text-align: start;
 `;
 
 export const TitleContent = styled.span`
