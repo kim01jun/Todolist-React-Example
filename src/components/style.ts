@@ -1,7 +1,12 @@
 import styled from 'styled-components';
 
-export const ModalBackground = styled.div`
+interface ModalBackgroundProps {
+  readonly active?: boolean;
+}
+
+export const ModalBackground = styled.div<ModalBackgroundProps>`
   position: fixed;
+  display: ${props => props.active ? 'block' : 'none'};
   top: 0;
   left: 0;
   right: 0;
