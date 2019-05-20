@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Page } from './style';
 import Header from '../components/Header/Header';
 import Login from '../components/Login/Login';
 import Start from '../components/Start/Start';
@@ -35,11 +36,11 @@ export default class Main extends Component<MainProps, MainState> {
 
   render() {
     return (
-      <div>
+      <Page>
         <Header />
         <Todos token={this.state.token as string} userid={this.state.userid as string}/>
         {this.state.isLogin ? <Start name={this.state.name as string}/> : <Login />}
-      </div>
+      </Page>
     );
   }
 }

@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios, { AxiosResponse } from 'axios';
 import React, { Component } from 'react';
 import { SERVICE_URI } from '../../Constants';
 import TodoItem from '../TodoItem/TodoItem';
@@ -44,8 +44,24 @@ export default class Todos extends Component<TodosProps, TodosState> {
         content={todo.content}
         priority={todo.priority}
         dueDate={todo.dueDate}
-        done={todo.done} />);
+        done={todo.done}
+        complete={this.complete.bind(this)}
+        delete={this.delete.bind(this)} />);
     });
+  }
+
+  complete(todoId: string, before: boolean) {
+    axios.patch<TodoResponse>(`${SERVICE_URI}/api/${this.props.userid}/${todoId}`, {
+      done: !before,
+    }, {
+      headers: { Authorization: this.props.token },
+    }).then(res => this.setState({ todos: res.data.todos }));
+  }
+
+  delete(todoId: string) {
+    axios.delete(`${SERVICE_URI}/api/${this.props.userid}/${todoId}`, {
+      headers: { Authorization: this.props.token },
+    }).then((res: AxiosResponse<TodoResponse>) => this.setState({ todos: res.data.todos }));
   }
 
   async componentDidMount() {
