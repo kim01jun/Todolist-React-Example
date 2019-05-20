@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 
 interface ModalBackgroundProps {
-  readonly active?: boolean;
+  readonly isDeactive?: boolean;
 }
 
 export const ModalBackground = styled.div<ModalBackgroundProps>`
   position: fixed;
-  display: ${props => props.active ? 'block' : 'none'};
+  display: ${props => props.isDeactive ? 'none' : 'block'};
   top: 0;
   left: 0;
   right: 0;

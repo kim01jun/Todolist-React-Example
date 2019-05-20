@@ -7,24 +7,24 @@ interface StartProps {
 }
 
 interface StartState {
-  active: boolean;
+  isDeactive: boolean;
 }
 
 export default class Start extends Component<StartProps, StartState> {
   constructor(props: StartProps) {
     super(props);
 
-    this.state = { active: true };
+    this.state = { isDeactive: false };
     this.start = this.start.bind(this);
   }
 
   start(e: React.SyntheticEvent) {
-    this.setState({ active: false });
+    this.setState({ isDeactive: true });
   }
 
   render() {
     return (
-      <ModalBackground active={this.state.active}>
+      <ModalBackground isDeactive={this.state.isDeactive}>
         <Modal>
           <ExplainTitle>안녕하세요, {this.props.name}님!</ExplainTitle>
           <ExplainGeneral>당신의 할일을 정리하세요!</ExplainGeneral>
