@@ -21,19 +21,18 @@ interface TodoItemState {  }
 export default class TodoItem extends Component<TodoItemProps, TodoItemState> {
   render() {
     return (<Todo>
-        <Left>
-          <CircleBtn
-            onClick={e => this.props.complete(this.props.id, this.props.done)}
-            priority={this.props.priority} />
-            <TitleContent>
-              <Title>{this.props.title}</Title>
-              <Content>{this.props.content}</Content>
-            </TitleContent>
-        </Left>
-        <Right>
-          <DueDate>{new Date(this.props.dueDate).toLocaleString()}</DueDate>
-          <DeleteBtn onClick={e => this.props.delete(this.props.id)}>×</DeleteBtn>
-        </Right>
-      </Todo>);
+      <Left>
+        <CircleBtn onClick={e => this.props.complete(this.props.id, this.props.done)}
+          priority={this.props.priority} />
+        <TitleContent>
+          <Title>{this.props.title}</Title>
+          <Content>{this.props.content}</Content>
+        </TitleContent>
+      </Left>
+      <Right>
+        <DueDate>{new Date(this.props.dueDate).toLocaleString()}</DueDate>
+        <DeleteBtn onClick={e => this.props.delete(this.props.id)}>×</DeleteBtn>
+      </Right>
+    </Todo>);
   }
 }
