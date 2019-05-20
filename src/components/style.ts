@@ -21,3 +21,17 @@ export const Modal = styled.div`
   text-align: center;
   border-radius: 10px;
 `;
+
+export const ExplainTitle = styled.p`
+  font-family: 'Noto Sans KR';
+  font-weight: 900;
+  font-size: 30px;
+  margin-bottom: 0px;
+`;
+
+export const ExplainGeneral = styled.p`
+  font-family: 'Noto Sans KR';
+  font-size: 20px;
+  margin-top: 0px;
+  margin-bottom: 50px;
+`;
