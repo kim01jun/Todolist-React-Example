@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import {
-  ModalBackground, LoginModal, ExplainLogin, ExplainTodoList, FacebookLoginBtn,
-} from './style';
+import { ExplainLogin, ExplainTodoList, FacebookLoginBtn } from './style';
+import { ModalBackground, Modal } from '../style';
 
 interface LoginProps { }
 
@@ -21,11 +20,11 @@ export default class Login extends Component<LoginProps, LoginState> {
   render() {
     return (
       <ModalBackground>
-        <LoginModal>
+        <Modal>
           <ExplainLogin>TodoList에 로그인</ExplainLogin>
           <ExplainTodoList>당신의 할일을 정리하세요!</ExplainTodoList>
           <FacebookLoginBtn onClick={this.login}>Facebook으로 계속</FacebookLoginBtn>
-        </LoginModal>
+        </Modal>
       </ModalBackground>
     );
   }
