@@ -1,7 +1,5 @@
-import axios from 'axios';
 import React, { Component } from 'react';
 import { EditTodoWrapper, CustomInput, SendBtn } from './style';
-import { SERVICE_URI } from '../../Constants';
 
 interface EditTodoProps {
   userid: string;
@@ -55,7 +53,7 @@ export default class EditTodo extends Component<EditTodoProps, EditTodoState> {
         min="1"
         max="4"/>
       <SendBtn
-        onClick={e => this.props.addTodo(this.state.title,
+        onClick={() => this.props.addTodo(this.state.title,
           this.state.content,
           this.state.priority)}>추가</SendBtn>
     </EditTodoWrapper>

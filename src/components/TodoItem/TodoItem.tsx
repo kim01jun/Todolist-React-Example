@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {
-  Todo, CircleBtn, Title, Content, TitleContent, Left, Right, DueDate, DeleteBtn
+  Todo, CircleBtn, Title, Content, TitleContent, Left, Right, DueDate, DeleteBtn,
 } from './style';
 
 interface TodoItemProps {
