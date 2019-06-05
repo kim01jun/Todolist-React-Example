@@ -6,7 +6,6 @@ export const HeaderDiv = styled.div`
   margin: 0px;
   background-color: #FF2D54;
   text-align: center;
-  font-family: 'Noto Sans KR';
   font-weight: 700;
   color: white;
   font-size: 25px;

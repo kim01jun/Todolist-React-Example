@@ -39,7 +39,6 @@ interface CircleBtnProps {
 
 export const Todo = styled.li`
   display: flex;
-  font-family: 'Noto Sans KR';
   justify-content: space-between;
   padding: 10px;
 `;

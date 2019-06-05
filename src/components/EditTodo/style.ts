@@ -13,7 +13,6 @@ export const SendBtn = styled.button`
   border: none;
   background-color: #FF2D54;
   color: white;
-  font-family: 'Noto Sans KR';
 
   &:hover {
     background-color: #C4002C;
