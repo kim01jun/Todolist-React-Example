@@ -17,14 +17,14 @@ const COLOR: IPriorities = {
     hover: 'rgba(255, 0, 0, 0.4)',
   },
   2: {
-    border: 'rgb()',
-    background: 'rgba()',
-    hover: 'rgba()',
+    border: 'rgb(244,156,24)',
+    background: 'rgba(244,156,24, 0.2)',
+    hover: 'rgba(244,156,24, 0.4)',
   },
   3: {
-    border: 'rgb()',
-    background: 'rgba()',
-    hover: 'rgba()',
+    border: 'rgb(64,115,214)',
+    background: 'rgba(64,115,214, 0.2)',
+    hover: 'rgba(64,115,214, 0.4)',
   },
   4: {
     border: 'rgb(128, 128, 128)',
