@@ -66,12 +66,12 @@ export const Title = styled.p`
   font-weight: 700;
 `;
 
-export const Content = styled.span`
+export const Description = styled.span`
   font-weight: 300;
   text-align: start;
 `;
 
-export const TitleContent = styled.span`
+export const Content = styled.span`
   display: flex;
   margin-left: 30px;
   flex-direction: column;

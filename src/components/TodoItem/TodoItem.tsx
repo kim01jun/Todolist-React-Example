@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import {
-  Todo, CircleBtn, Title, Content, TitleContent, Left, Right, DueDate, DeleteBtn,
+  Todo, CircleBtn, Title, Description, Content, Left, Right, DueDate, DeleteBtn,
 } from './style';
 
 interface TodoItemProps {
   key: string;
   id: string;
   title: string;
-  content: string;
+  description: string;
   priority: number;
   dueDate?: Date;
   done: boolean;
@@ -24,10 +24,10 @@ export default class TodoItem extends Component<TodoItemProps, TodoItemState> {
       <Left>
         <CircleBtn onClick={e => this.props.complete(this.props.id, this.props.done)}
           priority={this.props.priority} />
-        <TitleContent>
+        <Content>
           <Title>{this.props.title}</Title>
-          <Content>{this.props.content}</Content>
-        </TitleContent>
+          <Description>{this.props.description}</Description>
+        </Content>
       </Left>
       <Right>
         {this.props.dueDate && <DueDate>{new Date(this.props.dueDate).toLocaleString()}</DueDate>}

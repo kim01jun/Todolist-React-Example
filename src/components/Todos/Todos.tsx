@@ -13,7 +13,7 @@ interface TodosProps {
 interface Todo {
   _id: string;
   title: string;
-  content: string;
+  description: string;
   priority: number;
   dueDate?: Date;
   done: boolean;
@@ -42,7 +42,7 @@ export default class Todos extends Component<TodosProps, TodosState> {
         key={todo._id}
         id={todo._id}
         title={todo.title}
-        content={todo.content}
+        description={todo.description}
         priority={todo.priority}
         dueDate={todo.dueDate}
         done={todo.done}
@@ -51,10 +51,10 @@ export default class Todos extends Component<TodosProps, TodosState> {
     });
   }
 
-  addTodo(title: string, content: string, priority: number) {
+  addTodo(title: string, description: string, priority: number) {
     axios.post<TodoResponse>(`${SERVICE_URI}/api/${this.props.userid}`, {
       title,
-      content,
+      description,
       priority,
     }, {
       headers: { Authorization: this.props.token },

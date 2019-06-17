@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
-import { EditTodoWrapper, CustomInput, SendBtn } from './style';
+import { EditTodoWrapper, PriorityInput, TitleInput, DescriptionInput, SendBtn } from './style';
 
 interface EditTodoProps {
   userid: string;
-  addTodo: (title: string, content: string, priority: number) => void;
+  addTodo: (title: string, description: string, priority: number) => void;
 }
 
 interface EditTodoState {
   title: string;
-  content: string;
+  description: string;
   priority: number;
   [state: string]: string | number;
 }
@@ -19,7 +19,7 @@ export default class EditTodo extends Component<EditTodoProps, EditTodoState> {
 
     this.state = {
       title: '',
-      content: '',
+      description: '',
       priority: 4,
     };
   }
@@ -30,21 +30,7 @@ export default class EditTodo extends Component<EditTodoProps, EditTodoState> {
 
   render() {
     return (<EditTodoWrapper>
-      <CustomInput
-        type="text"
-        name="title"
-        value={this.state.title}
-        onChange={this.handleChange.bind(this)}
-        placeholder="제목"
-        required />
-      <CustomInput
-        type="text"
-        name="content"
-        value={this.state.content}
-        onChange={this.handleChange.bind(this)}
-        placeholder="내용"
-        required />
-      <CustomInput
+      <PriorityInput
         type="number"
         name="priority"
         value={this.state.priority}
@@ -52,9 +38,23 @@ export default class EditTodo extends Component<EditTodoProps, EditTodoState> {
         required
         min="1"
         max="4"/>
+      <TitleInput
+        type="text"
+        name="title"
+        value={this.state.title}
+        onChange={this.handleChange.bind(this)}
+        placeholder="제목"
+        required />
+      <DescriptionInput
+        type="text"
+        name="description"
+        value={this.state.description}
+        onChange={this.handleChange.bind(this)}
+        placeholder="내용"
+        required />
       <SendBtn
         onClick={() => this.props.addTodo(this.state.title,
-          this.state.content,
+          this.state.description,
           this.state.priority)}>추가</SendBtn>
     </EditTodoWrapper>
     );
