@@ -30,7 +30,8 @@ export default class TodoItem extends Component<TodoItemProps, TodoItemState> {
         </Content>
       </Left>
       <Right>
-        {this.props.dueDate && <DueDate>{new Date(this.props.dueDate).toLocaleString()}</DueDate>}
+        {this.props.dueDate &&
+          <DueDate>{new Date(this.props.dueDate).toLocaleDateString()}까지</DueDate>}
         <DeleteBtn onClick={e => this.props.delete(this.props.id)}>×</DeleteBtn>
       </Right>
     </Todo>);
