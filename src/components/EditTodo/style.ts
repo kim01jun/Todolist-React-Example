@@ -3,11 +3,20 @@ import styled from 'styled-components';
 export const EditTodoWrapper = styled.li`
   display: flex;
   justify-content: space-between;
+  align-items: center;
 `;
 
 export const Left = styled.div`
-  display:flex;
-  justify-content: space-between;
+  display: flex;
+  align-items: center;
+  flex: 3;
+`;
+
+export const Right = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex: 1;
 `;
 
 export const PriorityInput = styled.input`
@@ -15,11 +24,17 @@ export const PriorityInput = styled.input`
   outline: none;
   border: 1px solid #555;
   border-radius: 4px;
-  width: 30px;
+  padding-left: 5px;
+  width: 25px;
+  height: 20px;
+`;
 
-  &:focus {
-    border: 2px solid #555;
-  }
+export const Content = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 80%;
+  margin-left: 30px;
 `;
 
 export const TitleInput = styled.input`
@@ -27,10 +42,9 @@ export const TitleInput = styled.input`
   outline: none;
   border: 1px solid #555;
   border-radius: 4px;
-
-  &:focus {
-    border: 2px solid #555;
-  }
+  width: 30%;
+  padding-left: 5px;
+  margin-bottom: 5px;
 `;
 
 export const DescriptionInput = styled.input`
@@ -38,10 +52,7 @@ export const DescriptionInput = styled.input`
   outline: none;
   border: 1px solid #555;
   border-radius: 4px;
-
-  &:focus {
-    border: 2px solid #555;
-  }
+  padding-left: 5px;
 `;
 
 export const SendBtn = styled.button`
@@ -49,6 +60,7 @@ export const SendBtn = styled.button`
   border: none;
   background-color: #FF2D54;
   color: white;
+  margin-left: 50px;
 
   &:hover {
     background-color: #C4002C;

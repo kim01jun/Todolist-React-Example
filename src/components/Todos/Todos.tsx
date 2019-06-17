@@ -51,11 +51,12 @@ export default class Todos extends Component<TodosProps, TodosState> {
     });
   }
 
-  addTodo(title: string, description: string, priority: number) {
+  addTodo(title: string, description: string, priority: number, dueDate: number) {
     axios.post<TodoResponse>(`${SERVICE_URI}/api/${this.props.userid}`, {
       title,
       description,
       priority,
+      dueDate,
     }, {
       headers: { Authorization: this.props.token },
     }).then(res => this.setState({ todos: res.data.todos }));
